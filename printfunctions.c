@@ -62,12 +62,33 @@ int print_s(va_list s)
  *
  * Return: integer length count on success.
  * On error, -1 is returned, and errno is set appropriately.
- *
- *
+ */
+ 
 int print_di(va_list di)
 {
 	unsigned int count = 0;
+	int val = va_arg(di, int), divider = 1;
+
+	if (val < 0)
+	{
+		_putchar('-');
+		val = -val;
+		count++;
+	}
+
+	while ((val/divider) >= 10)
+	{
+		divider *= 10;
+	}
+
+	while (divider >= 1)
+	{
+		_putchar((val/divider) + '0');
+		val = val % divider;
+		divider /= 10;
+		count++;
+	}
 
 	return (count);
 }
-*/
+
