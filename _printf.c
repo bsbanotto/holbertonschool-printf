@@ -19,14 +19,14 @@ int (*get_print_func(const char *format))(va_list)
 	format_type format_type[] = {
 		{"c", print_c},
 		{"s", print_s},
-		/*	{"d", print_di},
-			{"i", print_di},*/
+		{"d", print_di},
+		{"i", print_di},
 		{NULL, NULL}
 	};
 
 	for (i = 0; format_type[i].spec != NULL; i++)
 	{
-		if (format_type[i].spec == format)
+		if (*(format_type[i].spec) == *format)
 		{
 			break;
 		}
@@ -43,7 +43,7 @@ int (*get_print_func(const char *format))(va_list)
 
 int _printf(const char *format, ...)
 {
-	unsigned int i, count;
+	unsigned int i, count = 0;
 	va_list ap;
 	int (*func)(va_list);
 
@@ -60,9 +60,7 @@ int _printf(const char *format, ...)
 			count++;
 		}
 		if (!format[i])
-		{
 			return (count);
-		}
 		func = get_print_func(&format[i + 1]);
 		if (func != NULL)
 		{
@@ -71,16 +69,12 @@ int _printf(const char *format, ...)
 			continue;
 		}
 		if (!format[i + 1])
-		{
 			return (-1);
-		}
 		_putchar(format[i]);
 		count++;
 
 		if (format[i + 1] == '%')
-		{
 			i += 2;
-		}
 		else
 			i++;
 	}
