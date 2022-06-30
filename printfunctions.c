@@ -46,11 +46,11 @@ int print_s(va_list s)
 	char *str = va_arg(s, char *);
 
 	if (str == NULL)
-		str = (null);
+		str = "(null)";
 
 	for (length = 0; str[length]; length++)
 	{
-		_putchar(str[length];
+		_putchar(str[length]);
 	}
 
 	return (length);

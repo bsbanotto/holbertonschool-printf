@@ -18,7 +18,7 @@ int print_di(va_list di);
 typedef struct printformat
 {
 	char *spec;
-	void (*f)(va_list)
+	void (*f)(va_list);
 } format_type;
 
 #endif
