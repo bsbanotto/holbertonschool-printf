@@ -14,25 +14,24 @@
  */
 
 int (*get_print_func(const char *format))(va_list)
-
 {
 	unsigned int i;
 	format_type format_type[] = {
 		{"c", print_c},
 		{"s", print_s},
-		{"d", print_di},
-		{"i", print_di},
+		/*	{"d", print_di},
+			{"i", print_di},*/
 		{NULL, NULL}
 	};
 
 	for (i = 0; format_type[i].spec != NULL; i++)
 	{
-		if (*(format_type[i].spec == *format))
+		if (format_type[i].spec == format)
 		{
 			break;
 		}
 	}
-	return (format_type[i].spec);
+	return (format_type[i].f);
 }
 
 /**
@@ -52,9 +51,10 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(ap, format);
+	i = 0;
 	while (format[i])
 	{
-		for (i = i; format[i] != '%'; i++)
+		for (i = i; format[i] != '%' && format[i]; i++)
 		{
 			_putchar(format[i]);
 			count++;
@@ -78,7 +78,9 @@ int _printf(const char *format, ...)
 		count++;
 
 		if (format[i + 1] == '%')
+		{
 			i += 2;
+		}
 		else
 			i++;
 	}
