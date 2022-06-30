@@ -66,7 +66,7 @@ int _printf(const char *format, ...)
 		func = get_print_func(&format[i + 1]);
 		if (func != NULL)
 		{
-			count += func(valist);
+			count += func(ap);
 			i += 2;
 			continue;
 		}
