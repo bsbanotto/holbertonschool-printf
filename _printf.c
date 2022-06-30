@@ -52,3 +52,36 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(ap, format);
+	while (format[i])
+	{
+		for (i = i; format[i] != '%'; i++)
+		{
+			_putchar(format[i]);
+			count++;
+		}
+		if (!format[i])
+		{
+			return (count);
+		}
+		func = get_print_func(&format[i + 1]);
+		if (func != NULL)
+		{
+			count += func(valist);
+			i += 2;
+			continue;
+		}
+		if (!format[i + 1])
+		{
+			return (-1);
+		}
+		_putchar(format[i]);
+		count++;
+
+		if (format[i + 1] == "%")
+			i += 2;
+		else
+			i++;
+	}
+	va_end(ap);
+	return (count);
+}
