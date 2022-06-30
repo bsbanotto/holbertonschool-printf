@@ -62,11 +62,12 @@ int print_s(va_list s)
  *
  * Return: integer length count on success.
  * On error, -1 is returned, and errno is set appropriately.
- */
-
+ *
+ *
 int print_di(va_list di)
 {
 	unsigned int count = 0;
 
 	return (count);
 }
+*/
