@@ -15,7 +15,7 @@ This project was assigned to us by Holberton School Tulsa. The mandatory goals/f
 ## <center>Examples
 
 ## Contributors
-This project exists because of the following contributors:
+This project exists because of the following contributors:<br />
 <a href="https://github.com/bsbanotto"><img src="https://avatars.githubusercontent.com/u/88809937?v=4"></a>
 
 > Written with [StackEdit](https://stackedit.io/).
