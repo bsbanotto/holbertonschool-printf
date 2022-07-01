@@ -16,7 +16,7 @@
 int (*get_print_func(const char *format))(va_list)
 {
 	unsigned int i;
-	format_type format_type[] = {
+	format_type print_class[] = {
 		{"c", print_c},
 		{"s", print_s},
 		{"d", print_di},
@@ -24,14 +24,14 @@ int (*get_print_func(const char *format))(va_list)
 		{NULL, NULL}
 	};
 
-	for (i = 0; format_type[i].spec != NULL; i++)
+	for (i = 0; print_class[i].spec != NULL; i++)
 	{
-		if (*(format_type[i].spec) == *format)
+		if (*(print_class[i].spec) == *format)
 		{
 			break;
 		}
 	}
-	return (format_type[i].f);
+	return (print_class[i].f);
 }
 
 /**
