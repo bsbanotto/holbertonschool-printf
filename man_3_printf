@@ -1,0 +1,70 @@
+.Dd 07/06/2022
+.Dt _printf 3
+.Os UBUNTU 20.04 LTS
+.Sh NAME
+.Nm _printf
+.Nd Holberton School formatted output conversion
+.Sh SYNOPSIS
+.Nm #include "main.h"
+.Pp
+.Nm _printf(const char *
+.Ar format
+, ...);
+.Sh DESCRIPTION
+The
+.Nm
+function is an emulator of the C <stdio.h> library printf() function.
+.Pp
+The
+.Nm
+function writes values to
+.Ar stdout
+according to a
+.Ar format
+string that defines how arguments wil be converted for output. These arguments
+will be described further down in this manual.
+.Pp
+.Sh Format of the format string
+.Pp
+The
+.Ar format
+string is a character string enclosed in double quotes. This format string
+is composed of characters and conversion specifiers. Conversion specifiers are
+preceded by the '%' character. The conversion specifire defines how arguents
+will be converted for output. Any conversion specifiers may be preceded by
+characters, separated by characters(if there is more than one conversion
+specifier), or followed by characters. Any characters will also be printed
+to the standard output.
+.Pp
+The arguments that are passed into the function must correspoind with the
+conversion specifiers. Each argument will be separated by a comma. If these
+arguments and conversion specdifiers do not correspond,
+.Nm
+will misbehave.
+.Pp
+.Sh Conversion specifiers
+.Pp
+A conversion specifier is a character that is preceded by a '%' character and
+are defined below:
+.Pp
+.Bl -tag -width -indent
+.It d, i
+A signed integer value is printed
+.It s
+A string (character array) is printed, up to but not including the terminating
+null ('\\0') byte.
+.It c
+A single character is printed.
+.El
+.Pp
+.Sh RETURN VALUE
+When the
+.Nm
+function successfuly executes, the function returns the number
+of characters printed.
+If an output error is encountered, a negative value is returned.
+.Sh NOTES
+We've done out best not to plagiarize the PRINTF(3) Linux Programmer's Manual.
+There are inherently similar streams of thought and use of vocabulary and
+structure that come with creating a function emulator. All credit goes to the
+Linux Programmer's Manual.
