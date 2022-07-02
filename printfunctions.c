@@ -9,7 +9,7 @@
  */
 int _putchar(char c)
 {
-	return(write(1, &c, 1));
+	return (write(1, &c, 1));
 }
 
 /**
@@ -23,7 +23,7 @@ int print_c(va_list c)
 {
 	unsigned int count = 0;
 
-	if(!c)
+	if (!c)
 		return (0);
 
 	_putchar((char)va_arg(c, int));
@@ -36,7 +36,7 @@ int print_c(va_list c)
  * print_s - writes the string s to stdout via _putchar
  * @s: The string to print
  *
- * Return: On success, the length of string. 
+ * Return: On success, the length of string.
  * On error, -1 is returned, and errno is set appropriately.
  */
 
@@ -63,7 +63,7 @@ int print_s(va_list s)
  * Return: integer length count on success.
  * On error, -1 is returned, and errno is set appropriately.
  */
- 
+
 int print_di(va_list di)
 {
 	unsigned int count = 0;
@@ -76,14 +76,14 @@ int print_di(va_list di)
 		count++;
 	}
 
-	while ((val/divider) >= 10)
+	while ((val / divider) >= 10)
 	{
 		divider *= 10;
 	}
 
 	while (divider >= 1)
 	{
-		_putchar((val/divider) + '0');
+		_putchar((val / divider) + '0');
 		val = val % divider;
 		divider /= 10;
 		count++;
@@ -91,4 +91,3 @@ int print_di(va_list di)
 
 	return (count);
 }
-
