@@ -12,7 +12,19 @@ This project was assigned to us by Holberton School Tulsa. The mandatory goals/f
 - written in vi, vim, or emacs
 - compiled with the following `gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c`
 
-## <center>Examples
+## <center>How to Use (plus Examples)
+The user of _printf() will be able to print their desired format string and have the use of format specifiers to reserve space for the value variable types character, string, decimal, and integer (%c, %s, %d, and %i respectively). 
+The following shows an example of how these are implemented:
+
+    char c = 'x';
+    char *s = "hello";
+    int i = 6;
+
+    _printf("I have a char: %c, a string: %s, and an integer: %d.", c, s, int);
+
+The output would looks as follows:
+
+    I have a char: x, a string: hello, and an integer: 6.
 
 ## Contributors
 This project exists because of the following contributors:<br />
