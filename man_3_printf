@@ -64,7 +64,7 @@ function successfuly executes, the function returns the number
 of characters printed.
 If an output error is encountered, a negative value is returned.
 .Sh NOTES
-We've done out best not to plagiarize the PRINTF(3) Linux Programmer's Manual.
+We've done our best not to plagiarize the PRINTF(3) Linux Programmer's Manual.
 There are inherently similar streams of thought and use of vocabulary and
 structure that come with creating a function emulator. All credit goes to the
 Linux Programmer's Manual.
