@@ -66,9 +66,19 @@ int print_s(va_list s)
 
 int print_di(va_list di)
 {
-	unsigned int count = 0;
+	unsigned int count = 0, i = 0;
 	int val = va_arg(di, int), divider = 1;
+	char intmin[11] = {"-2147483648"};
 
+	if (val == INT_MIN)
+	{
+		for (i = 0; i <= 10; i++)
+		{
+			_putchar(intmin[i]);
+			count++;
+		}
+		return (count);
+	}
 	if (val < 0)
 	{
 		_putchar('-');
