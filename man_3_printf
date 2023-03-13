@@ -36,9 +36,9 @@ characters, separated by characters(if there is more than one conversion
 specifier), or followed by characters. Any characters will also be printed
 to the standard output.
 .Pp
-The arguments that are passed into the function must correspoind with the
+The arguments that are passed into the function must correspond with the
 conversion specifiers. Each argument will be separated by a comma. If these
-arguments and conversion specdifiers do not correspond,
+arguments and conversion specifiers do not correspond,
 .Nm
 will misbehave.
 .Pp
